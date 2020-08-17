@@ -1,11 +1,12 @@
 import React from 'react';
 
 import './App.css';
+import CardsPage from '../CardsPage';
 
 function App() {
   return (
     <>
-      <h1>My React App! test111</h1>
+      <CardsPage />
     </>
   );
 }
