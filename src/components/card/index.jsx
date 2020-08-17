@@ -12,7 +12,13 @@ function Card(props) {
   return (
     <>
       <div className="card">
-        <div className="cardHeader">
+        <div
+          className="cardHeader"
+          onClick={() => setExpandCard(!expandCard)}
+          onKeyDown={null}
+          role="button"
+          tabIndex={0}
+        >
           <div className="cardHeader__top">
             <div className="cardTitle">
               {`${card.title}, ${currency}`}
@@ -20,15 +26,9 @@ function Card(props) {
             <div className="cardDate">
               {date}
             </div>
-            <button
-              role="button"
-              className="cardHeader__buttonExpand"
-              onClick={() => setExpandCard(!expandCard)}
-            >
-              <div
-                className={`cardHeader__buttonIcon ${expandCard ? 'cardHeader__buttonIcon_rotate' : ''}`}
-              />
-            </button>
+            <div
+              className={`cardHeader__buttonIcon ${expandCard ? 'cardHeader__buttonIcon_rotate' : ''}`}
+            />
           </div>
           <div className="cardHeader__bottom">
             {`***${cardNumber}`}

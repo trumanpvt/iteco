@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useInput } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
 // import Search from '../search';
@@ -9,11 +9,12 @@ import './index.css';
 function CardsPage() {
   const [cardsData, setCardsData] = useState([]);
   const [cardsSearch, setCardsSearch] = useState('');
+  const [sortCards, setSortCards] = useState(false);
 
   useEffect(() => {
     const fetchData = async () => {
       const result = await axios(
-        'https://api.jsonbin.io/b/5f3ae7b24d9399103616cd5e',
+        'https://api.jsonbin.io/b/5f3b105faf209d1016bd8ed1',
       );
 
       setCardsData(result.data.cards);
@@ -22,9 +23,7 @@ function CardsPage() {
     fetchData();
   }, []);
 
-  function renderSearch(cards) {
-    console.log(cards);
-
+  function renderSearch() {
     return (
       <div>
         <form autoComplete="off">
@@ -39,6 +38,34 @@ function CardsPage() {
           </label>
         </form>
       </div>
+    );
+  }
+
+  function handleSort() {
+    setSortCards(!sortCards);
+
+    if (sortCards) {
+      const sortedCards = cardsData.sort(
+        (a, b) => new Date(b.expiringDate) - new Date(a.expiringDate),
+      );
+      setCardsData(sortedCards);
+    } else {
+      const sortedCards = cardsData.sort(
+        (a, b) => new Date(a.expiringDate) - new Date(b.expiringDate),
+      );
+      setCardsData(sortedCards);
+    }
+  }
+
+  function renderSort() {
+    return (
+      <button
+        className="sortButton"
+        onClick={handleSort}
+        type="button"
+      >
+        Сортировать по дате
+      </button>
     );
   }
 
@@ -61,7 +88,8 @@ function CardsPage() {
 
   return (
     <>
-      <div>{renderSearch(cardsData)}</div>
+      <div>{renderSearch()}</div>
+      {renderSort()}
       <div>
         {cardsData.map((card) => (
           renderCard(card)
