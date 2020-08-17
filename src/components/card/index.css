@@ -1,0 +1,51 @@
+.card {
+    box-shadow: 0 0 1px 1px #000;
+}
+
+.cardHeader {
+
+}
+
+.cardHeader__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cardHeader__buttonExpand {
+    box-sizing: border-box;
+    border: none;
+    background: none;
+    outline: none;
+}
+
+.cardHeader__buttonIcon {
+    width: 10px;
+    height: 10px;
+    border-right: 1px solid #000;
+    border-bottom: 1px solid #000;
+    transform: rotate(45deg);
+}
+
+.cardHeader__buttonIcon_rotate {
+    transform: rotate(-135deg);
+}
+
+.cardHeader__bottom {
+
+}
+
+.cardDescription {
+    /* transition: transform 1s ease; */
+}
+
+.cardDescription_hide {
+    max-height: 0;
+    transition: max-height 0.26s ease;
+    overflow: hidden;
+    
+}
+
+.cardDescription_show {
+    max-height: unset;
+}
