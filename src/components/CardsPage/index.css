@@ -49,6 +49,10 @@ html { font-family: 'Roboto', sans-serif; }
     margin-left: 10px;
 }
 
-.sortButtonArrow_sort {
-    transform: rotate(180deg) scaleX(-1);
+.sortButtonArrow:after {
+    content: '\2191';
+}
+
+.sortButtonArrow_sort:after {
+    content: '\2193';
 }
