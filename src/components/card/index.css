@@ -1,9 +1,14 @@
 .card {
     box-sizing: border-box;
     box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.5);
-    /* padding: 20px 20px; */
     margin-bottom: 20px;
     border-radius: 7px;
+    transition: box-shadow 0.5s ease-in-out;
+    font-size: 20px;
+}
+
+.card:hover {
+    box-shadow: 0 0 5px 1px rgba(0, 0, 0, 1);
 }
 
 .cardHeader {
@@ -15,6 +20,24 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+.cardHeader__topText {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 88%;
+}
+
+.cardTitle {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.cardDate {
+    color: #A9A9A9;
+    margin-bottom: 10px;
 }
 
 .cardHeader__buttonExpand {
@@ -37,22 +60,23 @@
 }
 
 .cardHeader__bottom {
-
+    color: #A9A9A9;
 }
 
 .cardDescription {
-    /* transition: transform 1s ease; */
+    transition: padding 0.25s ease;
+    color: #A9A9A9;
 }
 
 .cardDescription_hide {
-    max-height: 0;
-    transition: max-height 0.26s ease;
+    height: 0;
     overflow: hidden;
+    padding: 0 20px;
     
 }
 
 .cardDescription_show {
-    max-height: unset;
-    border-top: 1px solid #808080;
+    height: auto;
+    box-shadow: 0 0 8px 0px #C0C0C0;
     padding: 20px 20px;
 }

@@ -20,11 +20,13 @@ function Card(props) {
           tabIndex={0}
         >
           <div className="cardHeader__top">
-            <div className="cardTitle">
-              {`${card.title}, ${currency}`}
-            </div>
-            <div className="cardDate">
-              {date}
+            <div className="cardHeader__topText">
+              <div className="cardTitle">
+                {`${card.title}, ${currency}`}
+              </div>
+              <div className="cardDate">
+                {`до ${date}`}
+              </div>
             </div>
             <div
               className={`cardHeader__buttonIcon ${expandCard ? 'cardHeader__buttonIcon_rotate' : ''}`}
@@ -46,7 +48,6 @@ function Card(props) {
 
 Card.propTypes = {
   card: PropTypes.shape({
-    // cardNumber: PropTypes.string,
     currency: PropTypes.string,
     description: PropTypes.string,
     expiringDate: PropTypes.string,
@@ -58,7 +59,6 @@ Card.propTypes = {
 
 Card.defaultProps = {
   card: {
-    // cardNumber: '',
     currency: '',
     description: '',
     expiringDate: '',

@@ -1,3 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+html { font-family: 'Roboto', sans-serif; }
+
+.cardsPage {
+    padding: 20px 0;
+    margin: 0 auto;
+    max-width: 600px;
+}
+
+.searchLabel {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.searchText {    
+    margin-right: 15px;
+}
+
+.searchInput {
+    border-radius: 5px;
+    padding: 5px 5px;
+    outline: none;
+}
+
+.searchInput:focus {
+    border: 2px solid #000014;
+    
+}
+
 .sortButton {
-    margin-bottom: 20px;
+    margin: 18px 0 20px 0;
+    padding: 10px 10px;
+    border: none;
+    background-color: #000014;
+    border-radius: 5px;
+    color: #fff;
+    outline: none;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.sortButton:hover,
+.sortButton:focus {
+    opacity: 0.5;
 }

@@ -27,13 +27,20 @@ function CardsPage() {
     return (
       <div>
         <form autoComplete="off">
-          <label htmlFor="search">
-            Поиск карт:
+          <label
+            htmlFor="search"
+            className="searchLabel"
+          >
+            <div className="searchText">
+              Поиск карт:
+            </div>
             <input
+              id="search"
               name="search"
               type="text"
               value={cardsSearch}
               onChange={(e) => setCardsSearch(e.target.value.replace(/\D/, ''))}
+              className="searchInput"
             />
           </label>
         </form>
@@ -79,6 +86,7 @@ function CardsPage() {
           card={card}
           cardNumber={cardNumber}
           className="card"
+          tabIndex={0}
         />
       );
     }
@@ -87,15 +95,15 @@ function CardsPage() {
   }
 
   return (
-    <>
-      <div>{renderSearch()}</div>
+    <div className="cardsPage">
+      {renderSearch()}
       {renderSort()}
       <div>
         {cardsData.map((card) => (
           renderCard(card)
         ))}
       </div>
-    </>
+    </div>
   );
 }
 
