@@ -36,10 +36,19 @@ html { font-family: 'Roboto', sans-serif; }
     border-radius: 5px;
     color: #fff;
     outline: none;
-    transition: opacity 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+    display: flex;
 }
 
 .sortButton:hover,
 .sortButton:focus {
     opacity: 0.5;
+}
+
+.sortButtonArrow {
+    margin-left: 10px;
+}
+
+.sortButtonArrow_sort {
+    transform: rotate(180deg) scaleX(-1);
 }

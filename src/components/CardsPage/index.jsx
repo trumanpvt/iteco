@@ -72,6 +72,7 @@ function CardsPage() {
         type="button"
       >
         Сортировать по дате
+        <div className={`sortButtonArrow ${sortCards ? 'sortButtonArrow_sort' : ''}`}>&#8593;</div>
       </button>
     );
   }
